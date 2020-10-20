@@ -1,0 +1,99 @@
+@import 'variables';
+
+.hikingessentials {
+    padding: 100px 0;
+}
+
+.hikingessentials__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.hikingessentials__right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $main-color;
+
+    max-width: 40%;
+    height: 30%;
+}
+
+.hikingessentials__right:before {
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    content: "02";
+    color: $main-color;
+    font-family: 'Gilroy-Bold';
+    @include adaptiv-font(240, 120);
+    opacity: .1;
+}
+
+.hikingessentials__suptitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hikingessentials__suptitle__hr {
+    @include suptitleHR();
+}
+
+.hikingessentials__suptitle__content {
+    @include suptitle();
+}
+
+.hikingessentials__title {
+    @include titles(64);
+}
+
+.hikingessentials__text {
+    @include adaptiv-font(18, 10);
+    padding: 20px 0;
+    color: $main-color;
+}
+
+.hikingessentials__readmore {
+    @include adaptiv-font(18, 10);
+    color: $second-color;
+}
+
+.hikingessentials__readmore__text {
+    color: $second-color;
+    text-decoration: none;
+}
+
+.hikingessentials__image {
+    max-width: 95%;
+}
+
+@media (max-width: 1200px) {
+    .hikingessentials__content {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hikingessentials__right {
+        order: 0;
+        max-width: 70%;
+        height: auto;
+    }
+
+    .hikingessentials__left {
+        order: 1;
+    }
+
+    .hikingessentials__readmore {
+        padding: 10px 0;
+    }
+
+    .hikingessentials__image {
+        max-width: 70%;
+    }
+    
+}

@@ -1,0 +1,141 @@
+
+@import 'variables';
+
+.first__page {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    padding: 120px 10px;
+}
+
+// Follow nav
+
+.follow__links {
+    position: fixed;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.follow_link {
+    padding: 10px 10px;
+    color: $main-color;
+    text-decoration: none;
+}
+
+.follow {
+    -webkit-writing-mode: vertical-rl; 
+    writing-mode:vertical-lr;
+    font-family: $main-font-Bold;
+}
+
+// Main content
+
+.first__page__content {
+    max-width: 950px;
+}
+
+.suptitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.suptitle__hr {
+    @include suptitleHR(); 
+}
+
+.suptitle__content {
+    @include suptitle();
+}
+
+.title {
+    @include titles(88);
+}
+
+.title__uppercase {
+    text-transform: uppercase;
+}
+
+.title__scroll__down {
+    animation: drag 1.6s linear infinite;
+}
+
+.title__scroll__text {
+    text-transform: lowercase;
+    text-decoration: none;
+    text-decoration: none;
+    color: $main-color;
+    font-family: 'Gilroy-Bold';
+}
+
+.title__scroll__arr {
+    color: $main-color;
+}
+
+.scroll {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    right: 1%;
+}
+
+
+.scroll__progress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    border: 2px solid $main-color;
+    width: 1px;
+    height: 1%;
+    z-index: 100;
+}
+
+.scroll__links {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+.scroll__link {
+    font-family: 'Gilroy-Bold';
+    @include adaptiv-font(18, 10);
+    color: $main-color;
+    text-decoration: none;
+    text-align: center;
+
+    padding: 10px 0;
+}
+
+.scroll__hr {
+    height: 180px;
+    border: 2px solid #ffff;
+    opacity: .3;
+}
+
+
+// Adaptive 
+
+@media (max-width: 1200px) {
+    .first__page__content {
+        text-align: center;
+        max-width: 800px;
+    }
+
+    .suptitle {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .follow__links {
+        display: none;
+    }
+
+    .scroll {
+        display: none;
+    }
+}
